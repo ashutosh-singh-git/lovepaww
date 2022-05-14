@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import type {Node} from 'react';
 import {
     SafeAreaView,
     ScrollView,
@@ -19,7 +18,7 @@ import {
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
+const Section = ({children, title}) => {
     const isDarkMode = useColorScheme() === 'dark';
     return (
             <View style={styles.sectionContainer}>

@@ -1,12 +1,11 @@
 import thunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
+import Reducers from './reducers';
 
 const preloadedState = {};
 
-const reducer = {};
-
 const store = configureStore({
-    reducer,
+    reducer: Reducers,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
     devTools: process.env.NODE_ENV !== 'production',
     preloadedState,

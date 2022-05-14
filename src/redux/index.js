@@ -1,18 +1,15 @@
-import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 
-const initialState = {
+const preloadedState = {};
 
-};
+const reducer = {};
 
-const Reducers = {
-
-};
-
-const store = createStore(
-    Reducers,
-    initialState,
-    applyMiddleware(thunk)
-);
+const store = configureStore({
+    reducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+    devTools: process.env.NODE_ENV !== 'production',
+    preloadedState,
+});
 
 export default store;

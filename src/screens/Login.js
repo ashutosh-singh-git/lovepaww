@@ -194,20 +194,6 @@ export default function Login() {
                     </TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
-
-            {/* <KeyboardAvoidingView */}
-            {/*     style={{ */}
-            {/*         position: 'absolute', */}
-            {/*         bottom: GlobalDimensions.screenHeight / 16, */}
-            {/*         alignItems: 'center', */}
-            {/*         justifyContent: 'center', */}
-            {/*     }} */}
-            {/*     behavior="position" */}
-            {/*     contentContainerStyle={{ position: 'absolute', alignItems: 'center' }} */}
-            {/*     keyboardVerticalOffset={GlobalDimensions.screenHeight / 20} */}
-            {/* > */}
-            {/*      */}
-            {/* </KeyboardAvoidingView> */}
         </View>
     );
 }

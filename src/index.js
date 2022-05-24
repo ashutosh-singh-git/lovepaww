@@ -8,7 +8,7 @@ import RootNavigator from './navigation';
 function App() {
     return (
         <StoreProvider store={store}>
-            <RootNavigator/>
+            <RootNavigator />
         </StoreProvider>
     );
 }

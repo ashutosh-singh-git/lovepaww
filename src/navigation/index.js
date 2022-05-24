@@ -33,7 +33,7 @@ function RootNavigator() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => setIsLoggedIn(true), 6000);
+        setTimeout(() => setIsLoggedIn(true), 10000);
     }, []);
 
     return (
@@ -105,6 +105,9 @@ function RootNavigator() {
                             component={Login}
                             options={{
                                 headerShown: false,
+                            }}
+                            initialParams={{
+                                login: setIsLoggedIn
                             }}
                         />
                     </Stack.Navigator>

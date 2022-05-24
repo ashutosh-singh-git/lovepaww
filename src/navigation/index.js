@@ -1,5 +1,5 @@
 import { NavigationContainer, StackActions } from '@react-navigation/native';
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -86,6 +86,7 @@ function RootNavigator() {
                         name="SettingsStack"
                         component={Profile}
                         options={{
+                            headerShown: false,
                             tabBarLabel: 'Profile',
                             tabBarIcon: ({ color }) => (
                                 <MaterialCommunityIcons name="dog" color={color} size={40} />

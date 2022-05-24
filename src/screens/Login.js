@@ -82,112 +82,132 @@ export default function Login() {
             >
                 #lovedogs
             </Text>
-            <LottieView
-                source={doggyAnimation}
-                autoPlay
-                loop
-                style={{
-                    height: 350,
-                }}
-            />
             <KeyboardAvoidingView
                 style={{
                     position: 'absolute',
-                    bottom: GlobalDimensions.screenHeight / 16,
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    bottom: GlobalDimensions.screenHeight / 1.5
                 }}
                 behavior="position"
                 contentContainerStyle={{ position: 'absolute', alignItems: 'center' }}
-                keyboardVerticalOffset={GlobalDimensions.screenHeight / 20}
+                keyboardVerticalOffset={GlobalDimensions.screenHeight / 1.6}
             >
-                {sendOtp ? (
-                    <TextInput
-                        onChangeText={setChangeNumber}
-                        value={number}
-                        style={{
-                            fontSize: 20,
-                            borderColor: valid ? '#c9963b' : '#f50707',
-                            borderBottomWidth: 2,
-                            backgroundColor: '#fff',
-                            color: '#000',
-                            letterSpacing: 10,
-                            width: GlobalDimensions.screenWidth - 100,
-                            textAlign: 'center',
-                        }}
-                        placeholder="Phone Number"
-                        placeholderTextColor={
-                            valid ? 'rgba(201,150,59,0.31)' : 'rgba(245,7,7,0.33)'
-                        }
-                        maxLength={10}
-                        keyboardType="numeric"
-                    />
-                ) : (
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            width: GlobalDimensions.screenWidth - 100,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: '#fff',
-                        }}
-                    >
-                        {otp?.map((item, idx) => (
-                            <TextInput
-                                key={idx}
-                                keyboardType="number-pad"
-                                ref={(ref) => {
-                                    otpRef[idx] = ref;
-                                }}
-                                onChangeText={(value) => onChangeText({ value, idx })}
-                                textContentType="oneTimeCode"
-                                maxLength={1}
-                                placeholder={item}
-                                style={{
-                                    fontFamily: 'OpenSans-SemiBold',
-                                    fontSize: 18,
-                                    width: 32.5,
-                                    padding: 10,
-                                    marginVertical: 5,
-                                    marginHorizontal: 5,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: 'rgba(0,0,0,0.2)',
-                                    borderRadius: 2.5,
-                                    color: '#000',
-                                    textAlign: 'center',
-                                }}
-                                value={item === '' ? '' : item}
-                                onKeyPress={({ nativeEvent }) => {
-                                    if (nativeEvent.key === 'Backspace') {
-                                        if (idx > 0) otpRef[idx - 1].focus();
-                                    }
-                                }}
-                            />
-                        ))}
-                    </View>
-                )}
-                <TouchableOpacity
-                    disabled={disabled}
-                    activeOpacity={0.7}
-                    onPress={sendOtp ? sentOtp : verifyOtp}
+                <View
+                    style={{
+                        position: 'absolute',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
                 >
-                    <Text
+                    <LottieView
+                        source={doggyAnimation}
+                        autoPlay
+                        loop
                         style={{
-                            paddingHorizontal: 40,
-                            paddingVertical: 6,
-                            backgroundColor: '#c9963b',
-                            fontSize: 20,
-                            fontWeight: '700',
-                            color: 'white',
-                            borderRadius: 6,
-                            marginTop: 30,
+                            height: 350
                         }}
+                    />
+                    {sendOtp ? (
+                        <TextInput
+                            onChangeText={setChangeNumber}
+                            value={number}
+                            style={{
+                                fontSize: 20,
+                                borderColor: valid ? '#c9963b' : '#f50707',
+                                borderBottomWidth: 2,
+                                backgroundColor: '#fff',
+                                color: '#000',
+                                letterSpacing: 10,
+                                width: GlobalDimensions.screenWidth - 100,
+                                textAlign: 'center',
+                            }}
+                            placeholder="Phone Number"
+                            placeholderTextColor={
+                                valid ? 'rgba(201,150,59,0.31)' : 'rgba(245,7,7,0.33)'
+                            }
+                            maxLength={10}
+                            keyboardType="numeric"
+                        />
+                    ) : (
+                        <View
+                            style={{
+                                flexDirection: 'row',
+                                width: GlobalDimensions.screenWidth - 100,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: '#fff',
+                            }}
+                        >
+                            {otp?.map((item, idx) => (
+                                <TextInput
+                                    key={idx}
+                                    keyboardType="number-pad"
+                                    ref={(ref) => {
+                                        otpRef[idx] = ref;
+                                    }}
+                                    onChangeText={(value) => onChangeText({ value, idx })}
+                                    textContentType="oneTimeCode"
+                                    maxLength={1}
+                                    placeholder={item}
+                                    style={{
+                                        fontFamily: 'OpenSans-SemiBold',
+                                        fontSize: 18,
+                                        width: 32.5,
+                                        padding: 10,
+                                        marginVertical: 5,
+                                        marginHorizontal: 5,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backgroundColor: 'rgba(0,0,0,0.2)',
+                                        borderRadius: 2.5,
+                                        color: '#000',
+                                        textAlign: 'center',
+                                    }}
+                                    value={item === '' ? '' : item}
+                                    onKeyPress={({ nativeEvent }) => {
+                                        if (nativeEvent.key === 'Backspace') {
+                                            if (idx > 0) otpRef[idx - 1].focus();
+                                        }
+                                    }}
+                                />
+                            ))}
+                        </View>
+                    )}
+                    <TouchableOpacity
+                        disabled={disabled}
+                        activeOpacity={0.7}
+                        onPress={sendOtp ? sentOtp : verifyOtp}
                     >
-                        {sendOtp ? 'SEND OTP' : 'VERIFY'}
-                    </Text>
-                </TouchableOpacity>
+                        <Text
+                            style={{
+                                paddingHorizontal: 40,
+                                paddingVertical: 6,
+                                backgroundColor: '#c9963b',
+                                fontSize: 20,
+                                fontWeight: '700',
+                                color: 'white',
+                                borderRadius: 6,
+                                marginTop: 30
+                            }}
+                        >
+                            {sendOtp ? 'SEND OTP' : 'VERIFY'}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </KeyboardAvoidingView>
+
+            {/* <KeyboardAvoidingView */}
+            {/*     style={{ */}
+            {/*         position: 'absolute', */}
+            {/*         bottom: GlobalDimensions.screenHeight / 16, */}
+            {/*         alignItems: 'center', */}
+            {/*         justifyContent: 'center', */}
+            {/*     }} */}
+            {/*     behavior="position" */}
+            {/*     contentContainerStyle={{ position: 'absolute', alignItems: 'center' }} */}
+            {/*     keyboardVerticalOffset={GlobalDimensions.screenHeight / 20} */}
+            {/* > */}
+            {/*      */}
+            {/* </KeyboardAvoidingView> */}
         </View>
     );
 }

@@ -7,7 +7,7 @@ export default function Profile() {
 
     const changePositionTop = scrollY.interpolate({
         inputRange: [0, 100],
-        outputRange: ['-12.5%', '-27.5%'],
+        outputRange: ['-13%', '-27.5%'],
         extrapolate: 'clamp',
     });
 
@@ -195,8 +195,7 @@ export default function Profile() {
                 <View
                     style={{
                         position: 'relative',
-                        alignItems: 'center',
-                        backgroundColor: 'rgba(201,150,59,0.1)',
+                        alignItems: 'center'
                     }}
                 >
                     <ScrollView
@@ -215,7 +214,7 @@ export default function Profile() {
                     >
                         <View
                             style={{
-                                marginTop: GlobalDimensions.screenHeight / 7.5,
+                                marginTop: GlobalDimensions.screenHeight / 7.75,
                                 position: 'relative',
                                 height: GlobalDimensions.screenHeight / 10,
                                 width: '100%',
@@ -270,6 +269,17 @@ export default function Profile() {
                                 Total Distance
                             </Text>
                         </View>
+                        <View
+                            style={{
+                                position: 'relative',
+                                height: GlobalDimensions.screenHeight / 5,
+                                width: '100%',
+                                backgroundColor: '#fff',
+                                borderRadius: 10,
+                                marginVertical: 5,
+                                padding: 15
+                            }}
+                        />
                     </ScrollView>
                 </View>
             </SafeAreaView>

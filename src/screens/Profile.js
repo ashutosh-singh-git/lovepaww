@@ -59,7 +59,7 @@ export default function Profile() {
                                 overflow: 'hidden',
                                 borderStyle: 'solid',
                                 borderColor: '#000',
-                                borderWidth: 2
+                                borderWidth: 2,
                             }}
                         />
                         <View style={{ marginVertical: 5 }}>
@@ -195,7 +195,7 @@ export default function Profile() {
                 <View
                     style={{
                         position: 'relative',
-                        alignItems: 'center'
+                        alignItems: 'center',
                     }}
                 >
                     <ScrollView
@@ -231,7 +231,7 @@ export default function Profile() {
                                 borderRadius: 10,
                                 marginVertical: 5,
                                 padding: 15,
-                                alignItems: 'center'
+                                alignItems: 'center',
                             }}
                         >
                             <Text
@@ -257,7 +257,7 @@ export default function Profile() {
                                 backgroundColor: '#fff',
                                 borderRadius: 10,
                                 marginVertical: 5,
-                                padding: 15
+                                padding: 15,
                             }}
                         >
                             <Text
@@ -277,7 +277,7 @@ export default function Profile() {
                                 backgroundColor: '#fff',
                                 borderRadius: 10,
                                 marginVertical: 5,
-                                padding: 15
+                                padding: 15,
                             }}
                         />
                     </ScrollView>

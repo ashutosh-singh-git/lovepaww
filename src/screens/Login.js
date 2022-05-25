@@ -85,7 +85,7 @@ export default function Login() {
             <KeyboardAvoidingView
                 style={{
                     position: 'absolute',
-                    bottom: GlobalDimensions.screenHeight / 1.5
+                    bottom: GlobalDimensions.screenHeight / 1.5,
                 }}
                 behavior="position"
                 contentContainerStyle={{ position: 'absolute', alignItems: 'center' }}
@@ -95,7 +95,7 @@ export default function Login() {
                     style={{
                         position: 'absolute',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
                     }}
                 >
                     <LottieView
@@ -103,7 +103,7 @@ export default function Login() {
                         autoPlay
                         loop
                         style={{
-                            height: 350
+                            height: 350,
                         }}
                     />
                     {sendOtp ? (
@@ -118,7 +118,7 @@ export default function Login() {
                                 color: '#000',
                                 letterSpacing: 10,
                                 width: GlobalDimensions.screenWidth - 100,
-                                marginTop: 40
+                                marginTop: 40,
                             }}
                             placeholder="Phone Number"
                             placeholderTextColor={
@@ -186,7 +186,7 @@ export default function Login() {
                                 fontWeight: '700',
                                 color: 'white',
                                 borderRadius: 6,
-                                marginTop: 30
+                                marginTop: 30,
                             }}
                         >
                             {sendOtp ? 'SEND OTP' : 'VERIFY'}

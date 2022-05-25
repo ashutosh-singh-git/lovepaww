@@ -38,12 +38,7 @@ function RootNavigator() {
             ref={navigationRef}
             fallback={<Text>Loading...</Text>}
         >
-            <StatusBar
-                barStyle="dark-content"
-                backgroundColor="#c9963b"
-                hidden={false}
-                animated
-            />
+            <StatusBar barStyle="dark-content" backgroundColor="#c9963b" hidden={false} animated />
             {isLoggedIn ? (
                 <Tab.Navigator
                     initialRouteName="Fosters"
@@ -77,6 +72,7 @@ function RootNavigator() {
                         component={Rescue}
                         options={{
                             tabBarLabel: 'Rescue',
+                            // eslint-disable-next-line react/no-unstable-nested-components
                             tabBarIcon: ({ color }) => (
                                 <MaterialCommunityIcons name="doctor" color={color} size={40} />
                             ),
@@ -88,6 +84,7 @@ function RootNavigator() {
                         options={{
                             headerShown: false,
                             tabBarLabel: 'Profile',
+                            // eslint-disable-next-line react/no-unstable-nested-components
                             tabBarIcon: ({ color }) => (
                                 <MaterialCommunityIcons name="dog" color={color} size={40} />
                             ),

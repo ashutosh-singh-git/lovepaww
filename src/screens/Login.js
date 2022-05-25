@@ -118,7 +118,7 @@ export default function Login() {
                                 color: '#000',
                                 letterSpacing: 10,
                                 width: GlobalDimensions.screenWidth - 100,
-                                textAlign: 'center',
+                                marginTop: 40
                             }}
                             placeholder="Phone Number"
                             placeholderTextColor={

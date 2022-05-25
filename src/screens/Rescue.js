@@ -1,13 +1,39 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {FlatList} from 'react-native';
+import {RescueCard} from "../components";
+
+const DATA = [
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        title: 'First Item'
+    },
+    {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        title: 'Second Item',
+    },
+    {
+        id: '58694a0f-3da1-471f-bd945571e29d72',
+        title: 'Third Item',
+    },
+];
 
 export default function Rescue() {
-    const navigation = useNavigation();
+
+    // const [data, setData] = useState(DATA);
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontFamily: 'OpenSans-Light' }}>DOG Screen</Text>
-        </View>
+        <FlatList
+            data={DATA}
+            renderItem={({item, index}) =>
+                <RescueCard
+                    key={index}
+                    item={item}
+                />
+            }
+            contentContainerStyle={{
+                alignItems: 'center',
+            }}
+
+        />
     );
 }

@@ -89,7 +89,7 @@ export default function Login() {
                 }}
                 behavior="position"
                 contentContainerStyle={{ position: 'absolute', alignItems: 'center' }}
-                keyboardVerticalOffset={GlobalDimensions.screenHeight / 1.6}
+                keyboardVerticalOffset={GlobalDimensions.screenHeight / 1.5}
             >
                 <View
                     style={{

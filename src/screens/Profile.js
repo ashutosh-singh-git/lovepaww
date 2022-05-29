@@ -5,9 +5,15 @@ import { GlobalDimensions } from '../utils';
 export default function Profile() {
     const scrollY = useRef(new Animated.Value(0)).current;
 
-    const changePositionTop = scrollY.interpolate({
+    const handleHeaderPosition = scrollY.interpolate({
         inputRange: [0, 100],
         outputRange: ['-13%', '-27.5%'],
+        extrapolate: 'clamp',
+    });
+
+    const handleHeaderPictureSize = scrollY.interpolate({
+        inputRange: [0, 100],
+        outputRange: [100, 90],
         extrapolate: 'clamp',
     });
 
@@ -22,7 +28,7 @@ export default function Profile() {
         >
             <View
                 style={{
-                    height: GlobalDimensions.screenHeight / 2.1,
+                    height: 400,
                     width: GlobalDimensions.screenWidth,
                     backgroundColor: '#c9963b',
                     alignItems: 'center',
@@ -32,9 +38,9 @@ export default function Profile() {
                 <Animated.View
                     style={{
                         position: 'absolute',
-                        top: changePositionTop,
+                        top: handleHeaderPosition,
                         zIndex: 1,
-                        height: GlobalDimensions.screenHeight / 4.5,
+                        height: 185,
                         width: GlobalDimensions.screenWidth - 30,
                         backgroundColor: '#fff',
                         borderRadius: 10,
@@ -50,11 +56,22 @@ export default function Profile() {
                             alignItems: 'center',
                         }}
                     >
-                        <View
+                        <Animated.View
                             style={{
+                                position: 'relative',
+                                left: scrollY.interpolate({
+                                    inputRange: [0, 100],
+                                    outputRange: ['0%', '-130%'],
+                                    extrapolate: 'clamp',
+                                }),
+                                top: scrollY.interpolate({
+                                    inputRange: [0, 100],
+                                    outputRange: ['0%', '45%'],
+                                    extrapolate: 'clamp',
+                                }),
                                 borderRadius: 50,
-                                height: 100,
-                                width: 100,
+                                height: handleHeaderPictureSize,
+                                width: handleHeaderPictureSize,
                                 backgroundColor: '#fff',
                                 overflow: 'hidden',
                                 borderStyle: 'solid',
@@ -62,7 +79,17 @@ export default function Profile() {
                                 borderWidth: 2,
                             }}
                         />
-                        <View style={{ marginVertical: 5 }}>
+                        <Animated.View
+                            style={{
+                                position: 'relative',
+                                top: scrollY.interpolate({
+                                    inputRange: [0, 100],
+                                    outputRange: ['0%', '-5%'],
+                                    extrapolate: 'clamp',
+                                }),
+                                marginVertical: 5
+                            }}
+                        >
                             <Text
                                 style={{
                                     color: '#000',
@@ -72,7 +99,7 @@ export default function Profile() {
                                     fontWeight: 'bold',
                                 }}
                             >
-                                Prince Midha
+                                User Name
                             </Text>
                             <Text
                                 style={{
@@ -84,7 +111,7 @@ export default function Profile() {
                             >
                                 Abohar
                             </Text>
-                        </View>
+                        </Animated.View>
                     </View>
                     <View
                         style={{
@@ -268,6 +295,15 @@ export default function Profile() {
                             >
                                 Total Distance
                             </Text>
+                            {/* <MapView */}
+                            {/*     provider={PROVIDER_GOOGLE} */}
+                            {/*     region={{ */}
+                            {/*         latitude: 37.78825, */}
+                            {/*         longitude: -122.4324, */}
+                            {/*         latitudeDelta: 0.015, */}
+                            {/*         longitudeDelta: 0.0121, */}
+                            {/*     }} */}
+                            {/*  /> */}
                         </View>
                         <View
                             style={{

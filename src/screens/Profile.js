@@ -7,7 +7,7 @@ export default function Profile() {
 
     const handleHeaderPosition = scrollY.interpolate({
         inputRange: [0, 100],
-        outputRange: ['-13%', '-27.5%'],
+        outputRange: ['50%', '0%'],
         extrapolate: 'clamp',
     });
 
@@ -18,23 +18,21 @@ export default function Profile() {
     });
 
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
                 alignItems: 'center',
-                justifyContent: 'center',
                 backgroundColor: 'rgba(201,150,59,0.15)',
             }}
         >
             <View
                 style={{
-                    height: 400,
+                    height: 195,
                     width: GlobalDimensions.screenWidth,
                     backgroundColor: '#c9963b',
                     alignItems: 'center',
                 }}
-            />
-            <SafeAreaView>
+            >
                 <Animated.View
                     style={{
                         position: 'absolute',
@@ -219,106 +217,103 @@ export default function Profile() {
                         </TouchableOpacity>
                     </View>
                 </Animated.View>
-                <View
+            </View>
+            <View
+                style={{
+                    position: 'relative',
+                    alignItems: 'center',
+                }}
+            >
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    scrollEventThrottle={16}
+                    onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+                        useNativeDriver: false,
+                    })}
                     style={{
-                        position: 'relative',
-                        alignItems: 'center',
+                        width: GlobalDimensions.screenWidth - 30,
+                        marginBottom: GlobalDimensions.screenHeight / 4.1,
                     }}
                 >
-                    <ScrollView
-                        showsVerticalScrollIndicator={false}
-                        scrollEventThrottle={16}
-                        onScroll={Animated.event(
-                            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-                            {
-                                useNativeDriver: false,
-                            }
-                        )}
+                    <View
                         style={{
-                            width: GlobalDimensions.screenWidth - 30,
-                            marginBottom: GlobalDimensions.screenHeight / 4.1,
+                            marginTop: GlobalDimensions.screenHeight / 8.25,
+                            position: 'relative',
+                            height: GlobalDimensions.screenHeight / 10,
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            borderRadius: 10,
+                            marginBottom: 5,
+                        }}
+                    />
+                    <View
+                        style={{
+                            position: 'relative',
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            borderRadius: 10,
+                            marginVertical: 5,
+                            padding: 15,
+                            alignItems: 'center',
                         }}
                     >
-                        <View
+                        <Text
                             style={{
-                                marginTop: GlobalDimensions.screenHeight / 7.75,
-                                position: 'relative',
-                                height: GlobalDimensions.screenHeight / 10,
-                                width: '100%',
-                                backgroundColor: '#fff',
-                                borderRadius: 10,
-                                marginBottom: 5,
-                            }}
-                        />
-                        <View
-                            style={{
-                                position: 'relative',
-                                width: '100%',
-                                backgroundColor: '#fff',
-                                borderRadius: 10,
-                                marginVertical: 5,
-                                padding: 15,
-                                alignItems: 'center',
+                                color: '#000',
+                                fontSize: 12,
                             }}
                         >
-                            <Text
-                                style={{
-                                    color: '#000',
-                                    fontSize: 12,
-                                }}
-                            >
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi,
-                                doloribus expedita facere laborum odit tenetur? Aliquid autem
-                                beatae, illo ipsam maiores mollitia nesciunt non provident quis,
-                                ratione reiciendis suscipit. Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Ad animi, doloribus expedita facere laborum odit
-                                tenetur? Aliquid autem beatae, illo ipsam maiores mollitia nesciunt
-                                non provident quis, ratione reiciendis suscipit.
-                            </Text>
-                        </View>
-                        <View
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi,
+                            doloribus expedita facere laborum odit tenetur? Aliquid autem beatae,
+                            illo ipsam maiores mollitia nesciunt non provident quis, ratione
+                            reiciendis suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Ad animi, doloribus expedita facere laborum odit tenetur? Aliquid
+                            autem beatae, illo ipsam maiores mollitia nesciunt non provident quis,
+                            ratione reiciendis suscipit.
+                        </Text>
+                    </View>
+                    <View
+                        style={{
+                            position: 'relative',
+                            height: GlobalDimensions.screenHeight / 5,
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            borderRadius: 10,
+                            marginVertical: 5,
+                            padding: 15,
+                        }}
+                    >
+                        <Text
                             style={{
-                                position: 'relative',
-                                height: GlobalDimensions.screenHeight / 5,
-                                width: '100%',
-                                backgroundColor: '#fff',
-                                borderRadius: 10,
-                                marginVertical: 5,
-                                padding: 15,
+                                color: '#000',
+                                fontSize: 12,
                             }}
                         >
-                            <Text
-                                style={{
-                                    color: '#000',
-                                    fontSize: 12,
-                                }}
-                            >
-                                Total Distance
-                            </Text>
-                            {/* <MapView */}
-                            {/*     provider={PROVIDER_GOOGLE} */}
-                            {/*     region={{ */}
-                            {/*         latitude: 37.78825, */}
-                            {/*         longitude: -122.4324, */}
-                            {/*         latitudeDelta: 0.015, */}
-                            {/*         longitudeDelta: 0.0121, */}
-                            {/*     }} */}
-                            {/*  /> */}
-                        </View>
-                        <View
-                            style={{
-                                position: 'relative',
-                                height: GlobalDimensions.screenHeight / 5,
-                                width: '100%',
-                                backgroundColor: '#fff',
-                                borderRadius: 10,
-                                marginVertical: 5,
-                                padding: 15,
-                            }}
-                        />
-                    </ScrollView>
-                </View>
-            </SafeAreaView>
-        </View>
+                            Total Distance
+                        </Text>
+                        {/* <MapView */}
+                        {/*     provider={PROVIDER_GOOGLE} */}
+                        {/*     region={{ */}
+                        {/*         latitude: 37.78825, */}
+                        {/*         longitude: -122.4324, */}
+                        {/*         latitudeDelta: 0.015, */}
+                        {/*         longitudeDelta: 0.0121, */}
+                        {/*     }} */}
+                        {/*  /> */}
+                    </View>
+                    <View
+                        style={{
+                            position: 'relative',
+                            height: GlobalDimensions.screenHeight / 5,
+                            width: '100%',
+                            backgroundColor: '#fff',
+                            borderRadius: 10,
+                            marginVertical: 5,
+                            padding: 15,
+                        }}
+                    />
+                </ScrollView>
+            </View>
+        </SafeAreaView>
     );
 }

@@ -112,6 +112,28 @@ export default function RescueCard({ item }) {
                         width: '100%',
                     }}
                 />
+                <View style={{
+                    top: '-30%',
+                    width: '50%',
+                    marginLeft: '60%'
+                }}>
+                    <Text style={{
+                        fontSize: 18,
+                        fontWeight: '700',
+                        color: '#fff',
+                    }}>NAME: LUFFY</Text>
+                    <Text style={{
+                        fontSize: 18,
+                        fontWeight: '700',
+                        color: '#fff',
+                    }}>AGE: 10 years</Text>
+                    <Text style={{
+                        fontSize: 18,
+                        fontWeight: '700',
+                        color: '#fff',
+                    }}>BREED: HUSKY</Text>
+                </View>
+
             </View>
             <View
                 style={{

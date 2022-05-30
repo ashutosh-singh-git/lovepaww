@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { GlobalDimensions } from '../utils';
 import Dog from '../../assets/images/dog.jpg';
+import cardOverlay from '../../assets/images/bg_cyan_trans.png';
 
 export default function RescueCard({ item }) {
     const [layoutHeight, setLayoutHeight] = useState(0);
@@ -31,7 +32,7 @@ export default function RescueCard({ item }) {
         if (expanded) {
             setLayoutHeight(null);
         } else {
-            setLayoutHeight(135);
+            setLayoutHeight(90);
         }
     }, [expanded]);
 
@@ -39,7 +40,7 @@ export default function RescueCard({ item }) {
         <View
             style={{
                 width: GlobalDimensions.screenWidth - 26,
-                backgroundColor: '#c9963b99',
+                backgroundColor: '#88c1cb',
                 marginVertical: 10,
                 borderRadius: 10,
             }}
@@ -47,21 +48,22 @@ export default function RescueCard({ item }) {
             <View
                 style={{
                     height: GlobalDimensions.screenHeight / 12,
-                    backgroundColor: '#c9963b99',
                     flexDirection: 'row',
                     alignItems: 'center',
                     paddingHorizontal: 10,
                     borderRadius: 10,
                 }}
             >
-                <Image
-                    source={Dog}
-                    style={{
-                        height: GlobalDimensions.screenHeight / 12 - 16,
-                        width: GlobalDimensions.screenHeight / 12 - 14,
-                        borderRadius: 40,
-                    }}
-                />
+                <TouchableOpacity>
+                    <Image
+                        source={Dog}
+                        style={{
+                            height: GlobalDimensions.screenHeight / 12 - 16,
+                            width: GlobalDimensions.screenHeight / 12 - 14,
+                            borderRadius: 40,
+                        }}
+                    />
+                </TouchableOpacity>
                 <View
                     style={{
                         paddingLeft: 20,
@@ -78,60 +80,92 @@ export default function RescueCard({ item }) {
                     </Text>
                     <Text
                         style={{
-                            fontSize: 16,
-                            fontWeight: '700',
+                            fontSize: 13,
+                            fontWeight: '600',
                             color: 'white',
                         }}
                     >
-                        {item.title}
+                        {item.subTitle}
                     </Text>
                 </View>
             </View>
-            <Image
-                source={Dog}
+            <View
                 style={{
-                    height: GlobalDimensions.screenHeight / 4,
+                    height: GlobalDimensions.screenHeight / 2.5,
                     width: '100%',
+                    position: 'relative',
                 }}
-            />
+            >
+                <Image
+                    source={Dog}
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                    }}
+                />
+                <Image
+                    source={cardOverlay}
+                    resizeMode="stretch"
+                    style={{
+                        position: 'absolute',
+                        height: '100%',
+                        width: '100%',
+                    }}
+                />
+            </View>
             <View
                 style={{
                     height: layoutHeight,
+                    width: '100%',
+                    alignItems: 'center',
                     overflow: 'hidden',
+                    paddingHorizontal: 10,
+                    paddingVertical: 5,
                 }}
             >
                 <Text
                     style={{
-                        fontSize: 16,
-                        fontWeight: '700',
+                        fontSize: 15,
+                        fontWeight: '500',
+                        color: '#fff',
                     }}
                 >
-                    lorem ipsum lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv
-                    lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv
-                    lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv
-                    <TouchableOpacity
-                        activeOpacity={0.8}
-                        onPress={updateLayout}
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eos
+                    laudantium maiores quod rerum vel. Adipisci aperiam at consectetur, culpa illum
+                    modi odio odit pariatur, perspiciatis placeat quisquam reiciendis sapiente.
+                </Text>
+            </View>
+            <View
+                style={{
+                    width: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    paddingHorizontal: 10,
+                    paddingVertical: 5,
+                }}
+            >
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    onPress={updateLayout}
+                    style={{
+                        width: '25%',
+                        backgroundColor: '#508791',
+                        padding: 5,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderRadius: 5,
+                    }}
+                >
+                    <Text
                         style={{
-                            // height: 50,
-                            // width: '100%',
-                            backgroundColor: 'red',
+                            fontSize: 13,
+                            fontWeight: '500',
+                            color: '#fff',
                         }}
                     >
-                        <Text
-                            style={{
-                                fontSize: 16,
-                                fontWeight: '700',
-                                color: 'yellow',
-                            }}
-                        >
-                            see more
-                        </Text>
-                    </TouchableOpacity>
-                    lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv
-                    lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv lorem ipsumv
-                    lorem ipsumv
-                </Text>
+                        {!expanded ? 'show more' : 'show less'}
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

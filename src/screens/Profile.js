@@ -87,7 +87,7 @@ export default function Profile() {
                                     outputRange: ['0%', '-5%'],
                                     extrapolate: 'clamp',
                                 }),
-                                marginVertical: 5
+                                marginVertical: 5,
                             }}
                         >
                             <Text

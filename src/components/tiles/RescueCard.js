@@ -8,9 +8,9 @@ import {
     UIManager,
     View,
 } from 'react-native';
-import { GlobalDimensions, Theme } from '../utils';
-import Dog from '../../assets/images/dog.jpg';
-import cardOverlay from '../../assets/images/bg_cyan_trans.png';
+import {GlobalDimensions, Theme} from '../../utils';
+import Dog from '../../../assets/images/dog.jpg';
+import cardOverlay from '../../../assets/images/bg_cyan_trans.png';
 
 export default function RescueCard({ item }) {
     const [layoutHeight, setLayoutHeight] = useState(0);
@@ -41,7 +41,6 @@ export default function RescueCard({ item }) {
             style={{
                 width: GlobalDimensions.screenWidth - 26,
                 backgroundColor: Theme.palette.primary.main,
-                marginVertical: 10,
                 borderRadius: 10,
             }}
         >

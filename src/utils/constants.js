@@ -13,4 +13,4 @@ export const GlobalDimensions = {
 };
 
 export const abc = '';
-export const axiosBaseUrl = isDebug ? '' : '';
+export const axiosBaseUrl = isDebug ? 'http://192.168.0.214:8080' : 'http://192.168.0.214:8080';

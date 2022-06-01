@@ -19,7 +19,9 @@ export default function Fosters() {
     },[]);
 
     return (
-        <ScrollView nestedScrollEnabled>
+        <ScrollView nestedScrollEnabled contentContainerStyle={{
+            paddingBottom: 40
+        }}>
             {layout && layout?.length > 0 && layout?.map((item) => item)}
         </ScrollView>
     );

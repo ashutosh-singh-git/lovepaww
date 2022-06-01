@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import {FlatList, View} from 'react-native';
 import { RescueCard } from '../components';
 
 const DATA = [
@@ -29,7 +29,9 @@ export default function Rescue() {
             renderItem={({ item, index }) => <RescueCard key={index} item={item} />}
             contentContainerStyle={{
                 alignItems: 'center',
+                paddingBottom: 40
             }}
+            ItemSeparatorComponent={() => <View style={{height: 15}}/>}
         />
     );
 }

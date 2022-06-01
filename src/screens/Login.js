@@ -4,7 +4,7 @@ import LottieView from 'lottie-react-native';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import doggyAnimation from '../../assets/lottie/75980-licking-dog.json';
-import { GlobalDimensions } from '../utils';
+import { GlobalDimensions, Theme } from '../utils';
 import { login } from '../redux/reducers';
 
 export default function Login() {
@@ -21,10 +21,12 @@ export default function Login() {
 
     useEffect(() => {
         setTimeout(() => {
+            // eslint-disable-next-line no-unused-expressions
             otpRef[0] && otpRef[0].focus();
         }, 500);
 
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             clearInterval(intervalRef.current);
         };
     }, []);
@@ -70,14 +72,16 @@ export default function Login() {
     };
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#fff' }}>
+        <View
+            style={{ flex: 1, alignItems: 'center', backgroundColor: Theme.palette.common.white }}
+        >
             <Text
                 style={{
                     fontFamily: 'OpenSans-Light',
                     fontSize: 50,
                     fontWeight: 'bold',
                     marginVertical: GlobalDimensions.screenHeight / 15,
-                    color: '#c9963b',
+                    color: Theme.palette.secondary.main,
                 }}
             >
                 #lovedogs
@@ -112,17 +116,21 @@ export default function Login() {
                             value={number}
                             style={{
                                 fontSize: 20,
-                                borderColor: valid ? '#c9963b' : '#f50707',
+                                borderColor: valid
+                                    ? Theme.palette.secondary.main
+                                    : Theme.palette.error.main,
                                 borderBottomWidth: 2,
-                                backgroundColor: '#fff',
-                                color: '#000',
+                                backgroundColor: Theme.palette.common.white,
+                                color: Theme.palette.text.dark,
                                 letterSpacing: 10,
                                 width: GlobalDimensions.screenWidth - 100,
                                 marginTop: 40,
                             }}
                             placeholder="Phone Number"
                             placeholderTextColor={
-                                valid ? 'rgba(201,150,59,0.31)' : 'rgba(245,7,7,0.33)'
+                                valid
+                                    ? Theme.palette.secondary.lighter
+                                    : Theme.palette.error.lighter
                             }
                             maxLength={10}
                             keyboardType="numeric"
@@ -134,7 +142,7 @@ export default function Login() {
                                 width: GlobalDimensions.screenWidth - 100,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                backgroundColor: '#fff',
+                                backgroundColor: Theme.palette.common.white,
                             }}
                         >
                             {otp?.map((item, idx) => (
@@ -159,7 +167,7 @@ export default function Login() {
                                         justifyContent: 'center',
                                         backgroundColor: 'rgba(0,0,0,0.2)',
                                         borderRadius: 2.5,
-                                        color: '#000',
+                                        color: Theme.palette.text.dark,
                                         textAlign: 'center',
                                     }}
                                     value={item === '' ? '' : item}
@@ -181,10 +189,10 @@ export default function Login() {
                             style={{
                                 paddingHorizontal: 40,
                                 paddingVertical: 6,
-                                backgroundColor: '#c9963b',
+                                backgroundColor: Theme.palette.secondary.main,
                                 fontSize: 20,
                                 fontWeight: '700',
-                                color: 'white',
+                                color: Theme.palette.text.light,
                                 borderRadius: 6,
                                 marginTop: 30,
                             }}

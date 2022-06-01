@@ -7,6 +7,7 @@ import { hide } from 'react-native-bootsplash';
 import { StatusBar, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Fosters, Login, Profile, Rescue } from '../screens';
+import { Theme } from '../utils';
 
 export const navigationRef = createRef();
 
@@ -38,17 +39,22 @@ function RootNavigator() {
             ref={navigationRef}
             fallback={<Text>Loading...</Text>}
         >
-            <StatusBar barStyle="dark-content" backgroundColor="#c9963b" hidden={false} animated />
+            <StatusBar
+                barStyle="dark-content"
+                backgroundColor={Theme.palette.secondary.main}
+                hidden={false}
+                animated
+            />
             {isLoggedIn ? (
                 <Tab.Navigator
                     initialRouteName="Fosters"
                     backBehavior="order"
                     screenOptions={{
                         headerShown: false,
-                        tabBarStyle: { backgroundColor: '#c9963b', height: 60 },
-                        tabBarActiveTintColor: '#000',
-                        tabBarInactiveTintColor: '#fff',
-                        tabBarActiveBackgroundColor: '#fff',
+                        tabBarStyle: { backgroundColor: Theme.palette.secondary.main, height: 60 },
+                        tabBarActiveTintColor: Theme.palette.common.black,
+                        tabBarInactiveTintColor: Theme.palette.common.white,
+                        tabBarActiveBackgroundColor: Theme.palette.common.white,
                         tabBarLabelStyle: { fontWeight: '700', fontSize: 16 },
                     }}
                 >
@@ -72,6 +78,10 @@ function RootNavigator() {
                         component={Rescue}
                         options={{
                             tabBarLabel: 'Rescue',
+                            tabBarStyle: {
+                                backgroundColor: Theme.palette.primary.main,
+                                height: 60,
+                            },
                             // eslint-disable-next-line react/no-unstable-nested-components
                             tabBarIcon: ({ color }) => (
                                 <MaterialCommunityIcons name="doctor" color={color} size={40} />

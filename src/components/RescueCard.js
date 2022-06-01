@@ -8,7 +8,7 @@ import {
     UIManager,
     View,
 } from 'react-native';
-import { GlobalDimensions } from '../utils';
+import { GlobalDimensions, Theme } from '../utils';
 import Dog from '../../assets/images/dog.jpg';
 import cardOverlay from '../../assets/images/bg_cyan_trans.png';
 
@@ -40,7 +40,7 @@ export default function RescueCard({ item }) {
         <View
             style={{
                 width: GlobalDimensions.screenWidth - 26,
-                backgroundColor: '#88c1cb',
+                backgroundColor: Theme.palette.primary.main,
                 marginVertical: 10,
                 borderRadius: 10,
             }}
@@ -73,7 +73,7 @@ export default function RescueCard({ item }) {
                         style={{
                             fontSize: 16,
                             fontWeight: '700',
-                            color: 'white',
+                            color: Theme.palette.text.light,
                         }}
                     >
                         {item.title}
@@ -82,7 +82,7 @@ export default function RescueCard({ item }) {
                         style={{
                             fontSize: 13,
                             fontWeight: '600',
-                            color: 'white',
+                            color: Theme.palette.text.light,
                         }}
                     >
                         {item.subTitle}
@@ -112,28 +112,41 @@ export default function RescueCard({ item }) {
                         width: '100%',
                     }}
                 />
-                <View style={{
-                    top: '-30%',
-                    width: '50%',
-                    marginLeft: '60%'
-                }}>
-                    <Text style={{
-                        fontSize: 18,
-                        fontWeight: '700',
-                        color: '#fff',
-                    }}>NAME: LUFFY</Text>
-                    <Text style={{
-                        fontSize: 18,
-                        fontWeight: '700',
-                        color: '#fff',
-                    }}>AGE: 10 years</Text>
-                    <Text style={{
-                        fontSize: 18,
-                        fontWeight: '700',
-                        color: '#fff',
-                    }}>BREED: HUSKY</Text>
+                <View
+                    style={{
+                        top: '-30%',
+                        width: '50%',
+                        marginLeft: '60%',
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontSize: 18,
+                            fontWeight: '700',
+                            color: Theme.palette.text.light,
+                        }}
+                    >
+                        NAME: LUFFY
+                    </Text>
+                    <Text
+                        style={{
+                            fontSize: 18,
+                            fontWeight: '700',
+                            color: Theme.palette.text.light,
+                        }}
+                    >
+                        AGE: 10 years
+                    </Text>
+                    <Text
+                        style={{
+                            fontSize: 18,
+                            fontWeight: '700',
+                            color: Theme.palette.text.light,
+                        }}
+                    >
+                        BREED: HUSKY
+                    </Text>
                 </View>
-
             </View>
             <View
                 style={{
@@ -149,7 +162,7 @@ export default function RescueCard({ item }) {
                     style={{
                         fontSize: 15,
                         fontWeight: '500',
-                        color: '#fff',
+                        color: Theme.palette.text.light,
                     }}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, eos
@@ -171,7 +184,7 @@ export default function RescueCard({ item }) {
                     onPress={updateLayout}
                     style={{
                         width: '25%',
-                        backgroundColor: '#508791',
+                        backgroundColor: Theme.palette.primary.dark,
                         padding: 5,
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -182,7 +195,7 @@ export default function RescueCard({ item }) {
                         style={{
                             fontSize: 13,
                             fontWeight: '500',
-                            color: '#fff',
+                            color: Theme.palette.common.white,
                         }}
                     >
                         {!expanded ? 'show more' : 'show less'}

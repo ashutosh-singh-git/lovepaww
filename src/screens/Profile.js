@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Animated, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { GlobalDimensions } from '../utils';
+import { GlobalDimensions, Theme } from '../utils';
 
 export default function Profile() {
     const scrollY = useRef(new Animated.Value(0)).current;
@@ -29,7 +29,7 @@ export default function Profile() {
                 style={{
                     height: 195,
                     width: GlobalDimensions.screenWidth,
-                    backgroundColor: '#c9963b',
+                    backgroundColor: Theme.palette.secondary.main,
                     alignItems: 'center',
                 }}
             >
@@ -40,7 +40,7 @@ export default function Profile() {
                         zIndex: 1,
                         height: 185,
                         width: GlobalDimensions.screenWidth - 30,
-                        backgroundColor: '#fff',
+                        backgroundColor: Theme.palette.common.white,
                         borderRadius: 10,
                         marginVertical: 5,
                     }}
@@ -70,10 +70,10 @@ export default function Profile() {
                                 borderRadius: 50,
                                 height: handleHeaderPictureSize,
                                 width: handleHeaderPictureSize,
-                                backgroundColor: '#fff',
+                                backgroundColor: Theme.palette.common.white,
                                 overflow: 'hidden',
                                 borderStyle: 'solid',
-                                borderColor: '#000',
+                                borderColor: Theme.palette.common.black,
                                 borderWidth: 2,
                             }}
                         />
@@ -90,7 +90,7 @@ export default function Profile() {
                         >
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 14,
                                     textAlign: 'center',
                                     marginVertical: 3,
@@ -101,7 +101,7 @@ export default function Profile() {
                             </Text>
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 12,
                                     textAlign: 'center',
                                     marginVertical: 3,
@@ -131,13 +131,13 @@ export default function Profile() {
                                 width: (GlobalDimensions.screenWidth - 30) / 3,
                                 alignItems: 'center',
                                 borderRightWidth: 1,
-                                borderColor: 'rgba(0,0,0,0.68)',
+                                borderColor: Theme.palette.grey[800],
                             }}
                             onPress={() => {}}
                         >
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 14,
                                     paddingVertical: 5,
                                 }}
@@ -146,7 +146,7 @@ export default function Profile() {
                             </Text>
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 11,
                                     fontWeight: 'bold',
                                 }}
@@ -162,13 +162,13 @@ export default function Profile() {
                                 alignItems: 'center',
                                 borderLeftWidth: 1,
                                 borderRightWidth: 1,
-                                borderColor: 'rgba(0,0,0,0.68)',
+                                borderColor: Theme.palette.grey[800],
                             }}
                             onPress={() => {}}
                         >
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 14,
                                     paddingVertical: 5,
                                 }}
@@ -177,7 +177,7 @@ export default function Profile() {
                             </Text>
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 11,
                                     fontWeight: 'bold',
                                 }}
@@ -192,13 +192,13 @@ export default function Profile() {
                                 width: (GlobalDimensions.screenWidth - 30) / 3,
                                 alignItems: 'center',
                                 borderLeftWidth: 1,
-                                borderColor: 'rgba(0,0,0,0.68)',
+                                borderColor: Theme.palette.grey[800],
                             }}
                             onPress={() => {}}
                         >
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 14,
                                     paddingVertical: 5,
                                 }}
@@ -207,7 +207,7 @@ export default function Profile() {
                             </Text>
                             <Text
                                 style={{
-                                    color: '#000',
+                                    color: Theme.palette.text.dark,
                                     fontSize: 11,
                                     fontWeight: 'bold',
                                 }}
@@ -241,7 +241,7 @@ export default function Profile() {
                             position: 'relative',
                             height: GlobalDimensions.screenHeight / 10,
                             width: '100%',
-                            backgroundColor: '#fff',
+                            backgroundColor: Theme.palette.common.white,
                             borderRadius: 10,
                             marginBottom: 5,
                         }}
@@ -250,7 +250,7 @@ export default function Profile() {
                         style={{
                             position: 'relative',
                             width: '100%',
-                            backgroundColor: '#fff',
+                            backgroundColor: Theme.palette.common.white,
                             borderRadius: 10,
                             marginVertical: 5,
                             padding: 15,
@@ -259,7 +259,7 @@ export default function Profile() {
                     >
                         <Text
                             style={{
-                                color: '#000',
+                                color: Theme.palette.text.dark,
                                 fontSize: 12,
                             }}
                         >
@@ -277,7 +277,7 @@ export default function Profile() {
                             position: 'relative',
                             height: GlobalDimensions.screenHeight / 5,
                             width: '100%',
-                            backgroundColor: '#fff',
+                            backgroundColor: Theme.palette.common.white,
                             borderRadius: 10,
                             marginVertical: 5,
                             padding: 15,
@@ -285,7 +285,7 @@ export default function Profile() {
                     >
                         <Text
                             style={{
-                                color: '#000',
+                                color: Theme.palette.text.dark,
                                 fontSize: 12,
                             }}
                         >
@@ -306,7 +306,7 @@ export default function Profile() {
                             position: 'relative',
                             height: GlobalDimensions.screenHeight / 5,
                             width: '100%',
-                            backgroundColor: '#fff',
+                            backgroundColor: Theme.palette.common.white,
                             borderRadius: 10,
                             marginVertical: 5,
                             padding: 15,

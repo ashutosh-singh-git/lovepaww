@@ -1,5 +1,6 @@
 import { Dimensions, NativeModules, PixelRatio, Platform } from 'react-native';
 
+export const isDebug = true;
 const { StatusBarManager } = NativeModules;
 
 export const GlobalDimensions = {
@@ -12,3 +13,4 @@ export const GlobalDimensions = {
 };
 
 export const abc = '';
+export const axiosBaseUrl = isDebug ? '' : '';

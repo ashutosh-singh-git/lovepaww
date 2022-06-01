@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     rescue: true,
@@ -14,6 +14,6 @@ export const rescueSlice = createSlice({
     },
 });
 
-export const { rescue } = rescueSlice.actions;
+export const {rescue} = rescueSlice.actions;
 
 export default rescueSlice.reducer;

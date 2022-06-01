@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { Animated, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { GlobalDimensions, Theme } from '../utils';
+import React, {useRef} from 'react';
+import {Animated, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {GlobalDimensions, Theme} from '../utils';
 
 export default function Profile() {
     const scrollY = useRef(new Animated.Value(0)).current;
@@ -50,7 +50,7 @@ export default function Profile() {
                             position: 'absolute',
                             left: '50%',
                             top: '-50%',
-                            transform: [{ translateX: -50 }, { translateY: 35 }],
+                            transform: [{translateX: -50}, {translateY: 35}],
                             alignItems: 'center',
                         }}
                     >
@@ -133,7 +133,8 @@ export default function Profile() {
                                 borderRightWidth: 1,
                                 borderColor: Theme.palette.grey[800],
                             }}
-                            onPress={() => {}}
+                            onPress={() => {
+                            }}
                         >
                             <Text
                                 style={{
@@ -164,7 +165,8 @@ export default function Profile() {
                                 borderRightWidth: 1,
                                 borderColor: Theme.palette.grey[800],
                             }}
-                            onPress={() => {}}
+                            onPress={() => {
+                            }}
                         >
                             <Text
                                 style={{
@@ -194,7 +196,8 @@ export default function Profile() {
                                 borderLeftWidth: 1,
                                 borderColor: Theme.palette.grey[800],
                             }}
-                            onPress={() => {}}
+                            onPress={() => {
+                            }}
                         >
                             <Text
                                 style={{
@@ -227,7 +230,7 @@ export default function Profile() {
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                     scrollEventThrottle={16}
-                    onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+                    onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {
                         useNativeDriver: false,
                     })}
                     style={{

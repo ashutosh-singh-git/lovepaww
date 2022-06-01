@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import codePush from 'react-native-code-push';
-import { ToastAndroid } from 'react-native';
+import {ToastAndroid} from 'react-native';
 
 const SYNC_OPTIONS = {
     installMode: codePush.InstallMode.ON_NEXT_RESTART,
@@ -29,4 +29,4 @@ function CodePushHandler() {
     return null;
 }
 
-export default codePush({ checkFrequency: codePush.CheckFrequency.ON_APP_START })(CodePushHandler);
+export default codePush({checkFrequency: codePush.CheckFrequency.ON_APP_START})(CodePushHandler);

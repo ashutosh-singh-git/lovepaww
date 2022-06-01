@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     profile: true,
@@ -14,6 +14,6 @@ export const profileSlice = createSlice({
     },
 });
 
-export const { profile } = profileSlice.actions;
+export const {profile} = profileSlice.actions;
 
 export default profileSlice.reducer;

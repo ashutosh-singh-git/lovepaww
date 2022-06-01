@@ -5,18 +5,18 @@ import {LayoutFactory} from "../helpers/factory";
 
 export default function Fosters() {
 
-    const [layout,setLayout] = useState([]);
+    const [layout, setLayout] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         axiosApi({
-            url:'/paw?page=0&pageId=628908b771e836384ab41000&size=10',
-            method:'get'
+            url: '/paw?page=0&pageId=628908b771e836384ab41000&size=10',
+            method: 'get'
         })
-            .then((response)=> {
+            .then((response) => {
                 setLayout(response?.contents?.map((content) => LayoutFactory(content)))
             })
             .catch((error => console.log(error)))
-    },[]);
+    }, []);
 
     return (
         <ScrollView nestedScrollEnabled contentContainerStyle={{

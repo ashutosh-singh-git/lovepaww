@@ -1,13 +1,13 @@
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-import React, { createRef } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import React, {createRef} from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { hide } from 'react-native-bootsplash';
-import { StatusBar, Text } from 'react-native';
-import { useSelector } from 'react-redux';
-import { Fosters, Login, Profile, Rescue } from '../screens';
-import { Theme } from '../utils';
+import {hide} from 'react-native-bootsplash';
+import {StatusBar, Text} from 'react-native';
+import {useSelector} from 'react-redux';
+import {Fosters, Login, Profile, Rescue} from '../screens';
+import {Theme} from '../utils';
 
 export const navigationRef = createRef();
 
@@ -31,11 +31,11 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function RootNavigator() {
-    const { isLoggedIn } = useSelector((state) => state.auth);
+    const {isLoggedIn} = useSelector((state) => state.auth);
 
     return (
         <NavigationContainer
-            onReady={() => hide({ fade: true })}
+            onReady={() => hide({fade: true})}
             ref={navigationRef}
             fallback={<Text>Loading...</Text>}
         >
@@ -51,11 +51,11 @@ function RootNavigator() {
                     backBehavior="order"
                     screenOptions={{
                         headerShown: false,
-                        tabBarStyle: { backgroundColor: Theme.palette.secondary.main, height: 60 },
+                        tabBarStyle: {backgroundColor: Theme.palette.secondary.main, height: 60},
                         tabBarActiveTintColor: Theme.palette.common.black,
                         tabBarInactiveTintColor: Theme.palette.common.white,
                         tabBarActiveBackgroundColor: Theme.palette.common.white,
-                        tabBarLabelStyle: { fontWeight: '700', fontSize: 16 },
+                        tabBarLabelStyle: {fontWeight: '700', fontSize: 16},
                     }}
                 >
                     <Tab.Screen
@@ -64,7 +64,7 @@ function RootNavigator() {
                         options={{
                             tabBarLabel: 'Fosters',
                             // eslint-disable-next-line react/no-unstable-nested-components
-                            tabBarIcon: ({ color }) => (
+                            tabBarIcon: ({color}) => (
                                 <MaterialCommunityIcons
                                     name="dog-service"
                                     color={color}
@@ -83,8 +83,8 @@ function RootNavigator() {
                                 height: 60,
                             },
                             // eslint-disable-next-line react/no-unstable-nested-components
-                            tabBarIcon: ({ color }) => (
-                                <MaterialCommunityIcons name="doctor" color={color} size={40} />
+                            tabBarIcon: ({color}) => (
+                                <MaterialCommunityIcons name="doctor" color={color} size={40}/>
                             ),
                         }}
                     />
@@ -95,8 +95,8 @@ function RootNavigator() {
                             headerShown: false,
                             tabBarLabel: 'Profile',
                             // eslint-disable-next-line react/no-unstable-nested-components
-                            tabBarIcon: ({ color }) => (
-                                <MaterialCommunityIcons name="dog" color={color} size={40} />
+                            tabBarIcon: ({color}) => (
+                                <MaterialCommunityIcons name="dog" color={color} size={40}/>
                             ),
                         }}
                     />

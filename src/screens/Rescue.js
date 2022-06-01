@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import { RescueCard } from '../components';
+import {RescueCard} from '../components';
 
 const DATA = [
     {
@@ -26,7 +26,7 @@ export default function Rescue() {
     return (
         <FlatList
             data={DATA}
-            renderItem={({ item, index }) => <RescueCard key={index} item={item} />}
+            renderItem={({item, index}) => <RescueCard key={index} item={item}/>}
             contentContainerStyle={{
                 alignItems: 'center',
                 paddingBottom: 40

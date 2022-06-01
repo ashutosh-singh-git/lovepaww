@@ -1,1 +1,1 @@
-export { default as AxiosApi } from './axios-api';
+export {default as AxiosApi} from './axios-api';

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { axiosBaseUrl } from '../utils';
+import {axiosBaseUrl} from '../utils';
 
 const instance = axios.create({
     baseURL: axiosBaseUrl,
     timeout: 10000,
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
 });
 
 /**

@@ -65,7 +65,7 @@ const ERROR = {
 
 export default {
     palette: {
-        common: { black: GREY[1], white: GREY[0] },
+        common: {black: GREY[1], white: GREY[0]},
         primary: PRIMARY,
         secondary: SECONDARY,
         info: INFO,

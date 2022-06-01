@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import {
-    Image,
-    LayoutAnimation,
-    Platform,
-    Text,
-    TouchableOpacity,
-    UIManager,
-    View,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Image, LayoutAnimation, Platform, Text, TouchableOpacity, UIManager, View,} from 'react-native';
 import {GlobalDimensions, Theme} from '../../utils';
 import Dog from '../../../assets/images/dog.jpg';
 import cardOverlay from '../../../assets/images/bg_cyan_trans.png';
 
-export default function RescueCard({ item }) {
+export default function RescueCard({item}) {
     const [layoutHeight, setLayoutHeight] = useState(0);
 
     const [expanded, setExpanded] = useState(false);

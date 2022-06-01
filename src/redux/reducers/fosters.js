@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     fosters: true,
@@ -14,6 +14,6 @@ export const fostersSlice = createSlice({
     },
 });
 
-export const {fosters} = fostersSlice.actions;
+export const { fosters } = fostersSlice.actions;
 
 export default fostersSlice.reducer;

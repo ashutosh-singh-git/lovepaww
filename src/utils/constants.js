@@ -1,7 +1,7 @@
-import {Dimensions, NativeModules, PixelRatio, Platform} from 'react-native';
+import { Dimensions, NativeModules, PixelRatio, Platform } from 'react-native';
 
 export const isDebug = true;
-const {StatusBarManager} = NativeModules;
+const { StatusBarManager } = NativeModules;
 
 export const GlobalDimensions = {
     screenWidth: Dimensions.get('window').width,

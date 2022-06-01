@@ -1,1 +1,1 @@
-export {default as RescueCard} from './RescueCard';
+export { default as RescueCard } from './RescueCard';

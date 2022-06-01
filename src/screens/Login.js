@@ -1,11 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import * as yup from 'yup';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import doggyAnimation from '../../assets/lottie/75980-licking-dog.json';
-import {GlobalDimensions, Theme} from '../utils';
-import {login} from '../redux/reducers';
+import { GlobalDimensions, Theme } from '../utils';
+import { login } from '../redux/reducers';
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function Login() {
         };
     }, []);
 
-    const onChangeText = ({value, idx}) => {
+    const onChangeText = ({ value, idx }) => {
         const OTP = [...otp];
         OTP[idx] = value;
         setOtp(OTP);
@@ -73,7 +73,7 @@ export default function Login() {
 
     return (
         <View
-            style={{flex: 1, alignItems: 'center', backgroundColor: Theme.palette.common.white}}
+            style={{ flex: 1, alignItems: 'center', backgroundColor: Theme.palette.common.white }}
         >
             <Text
                 style={{
@@ -92,7 +92,7 @@ export default function Login() {
                     bottom: GlobalDimensions.screenHeight / 1.5,
                 }}
                 behavior="position"
-                contentContainerStyle={{position: 'absolute', alignItems: 'center'}}
+                contentContainerStyle={{ position: 'absolute', alignItems: 'center' }}
                 keyboardVerticalOffset={GlobalDimensions.screenHeight / 1.5}
             >
                 <View
@@ -152,7 +152,7 @@ export default function Login() {
                                     ref={(ref) => {
                                         otpRef[idx] = ref;
                                     }}
-                                    onChangeText={(value) => onChangeText({value, idx})}
+                                    onChangeText={(value) => onChangeText({ value, idx })}
                                     textContentType="oneTimeCode"
                                     maxLength={1}
                                     placeholder={item}
@@ -171,7 +171,7 @@ export default function Login() {
                                         textAlign: 'center',
                                     }}
                                     value={item === '' ? '' : item}
-                                    onKeyPress={({nativeEvent}) => {
+                                    onKeyPress={({ nativeEvent }) => {
                                         if (nativeEvent.key === 'Backspace') {
                                             if (idx > 0) otpRef[idx - 1].focus();
                                         }

@@ -1,11 +1,11 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
-import {TileFactory} from "../../helpers/factory";
+import { FlatList, Text, View } from 'react-native';
+import { TileFactory } from '../../helpers/factory';
 
-export default function Horizontal({tileType, tiles}) {
+export default function Horizontal({ tileType, tiles }) {
     return (
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{fontFamily: 'OpenSans-Light'}}>HORIZONTAL</Text>
+        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontFamily: 'OpenSans-Light' }}>HORIZONTAL</Text>
             <FlatList
                 data={tiles}
                 renderItem={(tile) => TileFactory(tileType, tile)}
@@ -14,7 +14,8 @@ export default function Horizontal({tileType, tiles}) {
                 contentContainerStyle={{
                     paddingHorizontal: 12,
                 }}
-                ItemSeparatorComponent={() => <View style={{width: 10}}/>}
+                showsHorizontalScrollIndicator={false}
+                ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
             />
         </View>
     );
